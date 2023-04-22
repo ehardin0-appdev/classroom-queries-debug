@@ -10,7 +10,7 @@ class EnrollmentsController < ApplicationController
   def show
     the_id = params.fetch("path_id")
 
-    matching_enrollments = Enrollment.where({ :id => the_id })
+    @matching_enrollments = Enrollment.where({ :id => the_id })
 
     @the_enrollment = matching_enrollments.at(0)
 
